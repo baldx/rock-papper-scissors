@@ -15,11 +15,9 @@ function getComputerChoice(computerChoice) {
 }
 
 function PlayerSelection(playerInput, lowerInput) {
-    
         playerInput = prompt("Choose from rock paper scissors");
         lowerInput = playerInput.toLowerCase();
         return lowerInput;
-    
 }
 
 function playRound(roundPlayerSelection, computerSelection ) {
