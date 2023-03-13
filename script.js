@@ -14,16 +14,17 @@ function getComputerChoice(computerChoice) {
     return computerChoice;
 }
 
-function PlayerSelection() {
-    let playerInput = prompt("Choose from rock paper scissors")
-    let lowerInput = playerInput.toLowerCase()
-    return lowerInput
+function PlayerSelection(playerInput, lowerInput) {
+    
+        playerInput = prompt("Choose from rock paper scissors");
+        lowerInput = playerInput.toLowerCase();
+        return lowerInput;
+    
 }
 
 function playRound(roundPlayerSelection, computerSelection ) {
 computerSelection = getComputerChoice();
 roundPlayerSelection = PlayerSelection();
-for (i = 0; i < 5; i++) {
         if (roundPlayerSelection == "rock" && computerSelection == "rock") {
             console.log("Tie!");
             }
@@ -54,7 +55,8 @@ for (i = 0; i < 5; i++) {
             else {
                 console.log("Invalid input")
             }
-    }
 }
 
-playRound()
+for (i = 0; i < 5; i++) {
+  playRound()  
+}
