@@ -13,12 +13,11 @@ function getComputerChoice(computerChoice) {
     return computerChoice;
 }
 
+
 let btn = document.querySelectorAll("button");
 const btnRock = document.querySelector("#rock");
 const btnPaper = document.querySelector("#paper");
 const btnScissors = document.querySelector("#scissors");
-
-
 
  function PlayerSelection(playerInput) {
     btn.forEach((button) => { //btn runs for each argument once with the parameter "button"
@@ -26,15 +25,20 @@ const btnScissors = document.querySelector("#scissors");
         const img = button.querySelector("img"); //if button is clicked img is assigned to img query 
         playerInput = img.alt; //playerInput equals to images alt
         console.log(playerInput);
+        button.classList.toggle("btnClick");
+        return playerInput;
     });
 });
 }
 
-function playRound(roundPlayerSelection, computerSelection ) {
+function playRound(roundPlayerSelection, computerSelection) {
 computerSelection = getComputerChoice();
 roundPlayerSelection = PlayerSelection();
-        if (roundPlayerSelection == "rock" && computerSelection == "rock") {
-            console.log("Tie!");
+const container = document.querySelector("#info");
+const divText = document.createElement("p");
+        if (roundPlayerSelection === computerSelection) {
+            divText.textContent = "Tie!";
+            container.appendChild(divText);
             }
             else if (roundPlayerSelection == "paper" && computerSelection == "rock"){
                 console.log("You won!");
@@ -45,9 +49,6 @@ roundPlayerSelection = PlayerSelection();
             else if (roundPlayerSelection == "rock" && computerSelection == "paper") {
                 console.log("You lost!");
             }
-            else if (roundPlayerSelection == "paper" && computerSelection == "paper"){
-                console.log("Tie!");
-            }
             else if (roundPlayerSelection == "scissors" && computerSelection == "paper") {
                 console.log("You won!");
             }
@@ -57,16 +58,7 @@ roundPlayerSelection = PlayerSelection();
             else if (roundPlayerSelection == "paper" && computerSelection == "scissors"){
                 console.log("You lost!");
             }
-            else if (roundPlayerSelection == "scissors" && computerSelection == "scissors") {
-                console.log("Tie!");
-            }
-            // else {
-            //     console.log("Invalid input")
-            // }
 }
 
-// for (i = 0; i < 5; i++) {
-//   playRound()  
-// }
 
 playRound();
