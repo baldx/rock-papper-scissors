@@ -13,20 +13,21 @@ function getComputerChoice(computerChoice) {
     return computerChoice;
 }
 
-const btnInput = document.querySelectorAll("button");
-const btnRock = document.getElementsByClassName("rock");
-const btnPaper = document.getElementsByClassName("paper");
-const btnScissors = document.getElementsByClassName("rock");
+let btn = document.querySelectorAll("button");
+const btnRock = document.querySelector("#rock");
+const btnPaper = document.querySelector("#paper");
+const btnScissors = document.querySelector("#scissors");
 
-function playerSelectionLogic() {
-    console.log("rock");
-}
+
 
  function PlayerSelection(playerInput) {
-    playerInput = addEventListener("click", () => {
-       btnInput.onclick = playerSelectionLogic();
+    btn.forEach((button) => { //btn runs for each argument once with the parameter "button"
+    button.addEventListener("click", () => { //button has an event 
+        const img = button.querySelector("img"); //if button is clicked img is assigned to img query 
+        playerInput = img.alt; //playerInput equals to images alt
+        console.log(playerInput);
     });
-    
+});
 }
 
 function playRound(roundPlayerSelection, computerSelection ) {
