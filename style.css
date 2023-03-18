@@ -34,3 +34,15 @@ button {
 button:hover {
     color: aqua;
 }
+
+.info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 16px;
+    font-size: 32px;
+}
+
+.btnClick {
+    border: 3px solid yellow;
+}
